@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://edCitalan.github.io/HOMBRESTYLE/schedulemaker",
+  "homepage": "https://edCitalan.github.io/HombreStyle/",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
