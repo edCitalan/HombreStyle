@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ShiftTable.css */
+.shift-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shift-table th,
+.shift-table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.shift-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.shift-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.shift-table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.employee {
+  display: inline-block; /* Display employees inline */
+  width: 300px; /* Adjust the width as needed */
+  margin: 20px; /* Add some margin between employees */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  vertical-align: top; /* Align to the top of the container */
+}
+
+
+.employee-name {
+  margin: 0;
+  color: #333;
+  text-decoration: underline;
+}
+
+.availability {
+  margin-top: 10px;
+}
+
+.day-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+
+}
+
+.time-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #444;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
