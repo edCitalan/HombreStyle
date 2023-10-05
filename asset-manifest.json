@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/schedulemaker/static/css/main.9665d93d.css",
-    "main.js": "/schedulemaker/static/js/main.7d420229.js",
-    "static/js/787.28cb0dcd.chunk.js": "/schedulemaker/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/schedulemaker/index.html",
-    "main.9665d93d.css.map": "/schedulemaker/static/css/main.9665d93d.css.map",
-    "main.7d420229.js.map": "/schedulemaker/static/js/main.7d420229.js.map",
-    "787.28cb0dcd.chunk.js.map": "/schedulemaker/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/HOMBRESTYLE/schedulemaker/static/css/main.9665d93d.css",
+    "main.js": "/HOMBRESTYLE/schedulemaker/static/js/main.153ee6a6.js",
+    "static/js/787.28cb0dcd.chunk.js": "/HOMBRESTYLE/schedulemaker/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/HOMBRESTYLE/schedulemaker/index.html",
+    "main.9665d93d.css.map": "/HOMBRESTYLE/schedulemaker/static/css/main.9665d93d.css.map",
+    "main.153ee6a6.js.map": "/HOMBRESTYLE/schedulemaker/static/js/main.153ee6a6.js.map",
+    "787.28cb0dcd.chunk.js.map": "/HOMBRESTYLE/schedulemaker/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9665d93d.css",
-    "static/js/main.7d420229.js"
+    "static/js/main.153ee6a6.js"
   ]
 }
