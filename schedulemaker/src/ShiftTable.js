@@ -1,13 +1,12 @@
 import React from 'react';
 import saveScheduleToCSV from "./csvWriter"
 
-function ShiftTable({ schedule }) {
+function ShiftTable({ schedule, handleChangeShift }) {
   const days = Object.keys(schedule);
   const shifts = ["0600-1400", "1400-2200", "2200-0600"];
 
   const currentDate = new Date();
 
-  // Calculate the date for each day of the week
   const dateLabels = days.map((day, index) => {
     const dayOffset = (index - currentDate.getDay() + 7) % 7;
     const date = new Date(currentDate);
@@ -17,8 +16,10 @@ function ShiftTable({ schedule }) {
   });
 
   const handleClick = () => {
-    saveScheduleToCSV(schedule)
+    // saveScheduleToCSV(schedule)
+    console.log(schedule)
   }
+
   return (
     <div className="shift-table">
       <h2>Schedule</h2>
@@ -38,7 +39,14 @@ function ShiftTable({ schedule }) {
             <tr key={shift}>
               <td>{shift}</td>
               {days.map(day => (
-                <td key={`${day}-${shift}`}>{schedule[day][shift].length === 0 ? <input value={"temp"} /> : schedule[day][shift]}</td>
+                <td key={`${day}-${shift}`}>
+                  {/* {schedule[day][shift].length === 0 ?
+                  
+                    <input name={day} value={schedule[day][shift]} onChange={(e) => handleChangeShift(e, day, shift)} />
+                    :
+                    schedule[day][shift]} */}
+                  <input name={day} value={schedule[day][shift]} onChange={(e) => handleChangeShift(e, day, shift)} />
+                </td>
               ))}
             </tr>
           ))}

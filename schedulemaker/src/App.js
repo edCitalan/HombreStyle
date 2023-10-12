@@ -1,13 +1,26 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './App.css';
 import ShiftTable from './ShiftTable';
+import AllWork from './AllWork'
 import { employees } from "./data"
 
 function App() {
   const [offTimesData, setOffTimesData] = useState(employees)
   const [schedule, setSchedule] = useState(null)
 
+  const handleChangeShift = (e, day, shift) => {
+    setSchedule(pre => ({ ...pre, [day]: { ...pre[day], [shift]: e.target.value } }))
+  }
 
+const handleClick = (id) =>{
+const newOffTimesdata = offTimesData.map(e => {
+  if(Number(id) === e.id){
+    e.off = !e.off
+  }
+  return e
+})
+    setOffTimesData(newOffTimesdata)
+}
   const handleChange = (employeeId, day, i) => {
     i = i[0]
     const updatedData = offTimesData.map(employee => {
@@ -63,14 +76,15 @@ function App() {
       };
     }
 
-    const maxShiftsPerEmployee = 5; // Maximum number of shifts per employee
-    const minHoursBetweenShifts = 12; // Minimum hours between shifts
+    const maxShiftsPerEmployee = 5;
+    const minHoursBetweenShifts = 12;
     const employeesShiftCount = {};
     const employeesLastShift = {};
 
     for (const shift of shifts) {
       for (const day of ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]) {
         const availableEmployees = employees.filter(employee =>
+          !employee.off &&
           isEmployeeAvailable(employee, day, shift) &&
           (!schedule[day][shift] || schedule[day][shift] !== employee.name) &&
           (!schedule[day][shifts[(shifts.indexOf(shift) + 1) % 3]] || schedule[day][shifts[(shifts.indexOf(shift) + 1) % 3]] !== employee.name) &&
@@ -92,10 +106,12 @@ function App() {
   }
 
 
+  
   return (
     <div className="App">
+      <AllWork employees={offTimesData} handleClick={handleClick}/>
       <form onSubmit={handleSubmit}>
-        {offTimesData.map(employee => (
+        {offTimesData.filter(employee => !employee.off).map(employee => (
           <div key={employee.id} className="employee">
             <h2 className="employee-name">{employee.name}</h2>
             {employee.availability.map(day => (
@@ -119,7 +135,7 @@ function App() {
         ))}
         <button type="submit" className="submit-button">Ready</button>
       </form>
-      {schedule && <ShiftTable schedule={schedule} />}
+      {schedule && <ShiftTable schedule={schedule} handleChangeShift={handleChangeShift} />}
     </div>
   );
 }
